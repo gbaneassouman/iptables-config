@@ -29,6 +29,10 @@ done
 sudo iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
 sudo iptables -A OUTPUT -p tcp --dport 53 -j ACCEPT
 
+# Allow outgoing NTP (port 123) 
+sudo iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
+sudo iptables -A OUTPUT -p tcp --dport 123 -j ACCEPT
+
 # Allow outgoing HTTP and HTTPS requests
 sudo iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
 sudo iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
